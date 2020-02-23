@@ -25,11 +25,11 @@ export class DashboardComponent implements OnInit {
   getConsumerData(){
     this.consumerService.getNextConsumerPage(this.page, this.size).subscribe(data => {
       this.consumers = data.content as Array<Consumer>; // get data
-      this.totalElements = data.totalElements; // get count
+      this.totalElements = data.totalElements; // get totalElements required by primeng paginator
     });
   }
 
-  paginate(event) { // called when pagination change
+  paginate(event) { // called when user change pagination
     this.page = event.page as number;
     this.getConsumerData();
   } 

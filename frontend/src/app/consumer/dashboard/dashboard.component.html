@@ -1,5 +1,5 @@
 <div *ngIf="consumers && consumers.length > 0" >
-    <p-table [value]="consumers">
+    <p-table [value]="consumers"> <!--see https://primefaces.org/primeng/#/table-->
         <ng-template pTemplate="header">
             <tr>
                 <th>Id</th>
@@ -16,4 +16,5 @@
         </ng-template>
       </p-table>
       <p-paginator [rows]="size" [totalRecords]="totalElements" (onPageChange)="paginate($event)"></p-paginator>
+      <!-- see https://primefaces.org/primeng/#/paginator -->
 </div>
